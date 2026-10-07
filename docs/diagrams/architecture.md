@@ -7,30 +7,30 @@ Arquitetura em camadas do QFlow, mostrando a interação entre Cliente, Backend,
 ```mermaid
 flowchart TB
     %% CLIENTES
-    subgraph CLIENT["🖥️ Clientes"]
+    subgraph CLIENT["Clientes"]
         WEB["Frontend Web<br/>React + TypeScript"]
         ADM["Painel Administrativo<br/>React + TypeScript"]
     end
 
     %% BACKEND
-    subgraph BACK["⚙️ Backend — Go"]
+    subgraph BACK["Backend — Go"]
         API["API REST<br/>Gin Framework"]
-        AUTH["🔐 Autenticação<br/>JWT + bcrypt"]
-        QUEUE["📋 Serviço de Filas<br/>Gerenciamento de filas"]
-        PRIORITY["🧠 Motor de Priorização<br/>Algoritmo de decisão"]
-        SERVICE["🎫 Serviço de Atendimento<br/>Controle de atendimentos"]
-        METRICS["📊 Serviço de Métricas<br/>Relatórios e KPIs"]
-        WS["🔄 WebSocket<br/>Real-time"]
+        AUTH["Autenticação<br/>JWT + bcrypt"]
+        QUEUE["Serviço de Filas<br/>Gerenciamento de filas"]
+        PRIORITY["Motor de Priorização<br/>Algoritmo de decisão"]
+        SERVICE["Serviço de Atendimento<br/>Controle de atendimentos"]
+        METRICS["Serviço de Métricas<br/>Relatórios e KPIs"]
+        WS["WebSocket<br/>Real-time"]
     end
 
     %% DATABASE
-    subgraph DATA["🗄️ Persistência"]
+    subgraph DATA["Persistência"]
         DB[("PostgreSQL<br/>Banco de Dados")]
         CACHE["Redis<br/>Cache & Sessions"]
     end
 
     %% INFRA
-    subgraph INFRA["📦 Infraestrutura"]
+    subgraph INFRA["Infraestrutura"]
         DOCKER["Docker<br/>Containerização"]
         COMPOSE["Docker Compose<br/>Orquestração local"]
     end
@@ -70,10 +70,10 @@ flowchart TB
     COMPOSE -.->|"Orquestra"| DOCKER
 
     %% Estilos
-    classDef client fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
-    classDef backend fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-    classDef database fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef infra fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
+    classDef client fill:#f0f0f0,stroke:#333,stroke-width:2px,color:#000
+    classDef backend fill:#f8f8f8,stroke:#333,stroke-width:2px,color:#000
+    classDef database fill:#f5f5f5,stroke:#333,stroke-width:2px,color:#000
+    classDef infra fill:#f0f0f0,stroke:#333,stroke-width:2px,color:#000
 
     class CLIENT client
     class BACK backend
@@ -131,4 +131,3 @@ flowchart TB
 | **WebSocket** | Atualizações instantâneas da fila e posição |
 | **Docker** | Portabilidade, consistência entre ambientes |
 | **JWT** | Stateless, escalável, seguro |
-

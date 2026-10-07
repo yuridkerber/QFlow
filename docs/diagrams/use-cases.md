@@ -117,22 +117,3 @@ graph LR
 
 ---
 
-## Relacionamentos
-
-- **Inclusão** (→): Indicam fluxo obrigatório entre casos de uso
-- **Associação Tracejada** (-.->): Indicam uso ou dependência
-
-### Fluxos Principais
-
-1. **Entrada do Cliente**
-   - Cliente → Entrar na fila → Receber senha
-
-2. **Atendimento**
-   - Atendente → Visualizar fila → Chamar próximo (usa Motor de Decisão) → Iniciar atendimento
-
-3. **Encerramento**
-   - Finalizar atendimento → Gera dados para Métricas e acompanhamento do Cliente
-
-4. **Configuração (Admin)**
-   - Criar fila → Cadastrar atendente → Configurar prioridades
-

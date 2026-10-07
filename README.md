@@ -26,25 +26,6 @@ As regras podem ser adaptadas de acordo com o contexto de cada instituição.
 
 ---
 
-## 👥 Perfis
-
-**Cliente**
-- Entrar e acompanhar uma fila
-- Visualizar posição e tempo estimado
-- Acompanhar o atendimento
-
-**Atendente**
-- Visualizar a fila
-- Chamar e realizar atendimentos
-- Gerenciar o status dos atendimentos
-
-**Administrador**
-- Gerenciar filas e atendentes
-- Configurar regras de priorização
-- Acompanhar métricas
-
----
-
 ## 🏗️ Arquitetura
 
 A arquitetura e os diagramas detalhados serão definidos durante o desenvolvimento do projeto.

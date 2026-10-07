@@ -85,14 +85,14 @@ flowchart TB
 
 ## Componentes da Arquitetura
 
-### 🖥️ Camada Cliente
+### Camada Cliente
 
 | Componente | Tecnologia | Responsabilidade |
 |---|---|---|
 | **Frontend Web** | React + TypeScript | Interface para Cliente e Atendente |
 | **Painel Administrativo** | React + TypeScript | Interface para Administrador |
 
-### ⚙️ Camada Backend
+### Camada Backend
 
 | Componente | Tecnologia | Responsabilidade |
 |---|---|---|
@@ -104,102 +104,19 @@ flowchart TB
 | **Serviço de Métricas** | Go | Coleta dados e gera relatórios/KPIs |
 | **WebSocket** | Go | Envia atualizações em tempo real aos clientes |
 
-### 🗄️ Camada de Persistência
+### Camada de Persistência
 
 | Componente | Tecnologia | Responsabilidade |
 |---|---|---|
 | **Banco de Dados** | PostgreSQL | Armazena dados persistentes (usuários, filas, atendimentos) |
 | **Cache** | Redis | Armazena sessões, cache de operações frequentes |
 
-### 📦 Camada de Infraestrutura
+### Camada de Infraestrutura
 
 | Componente | Tecnologia | Responsabilidade |
 |---|---|---|
 | **Docker** | Docker | Containeriza aplicações para portabilidade |
 | **Docker Compose** | Docker Compose | Orquestra containers em ambiente local/desenvolvimento |
-
----
-
-## Fluxos Principais
-
-### 1️⃣ Autenticação
-```
-Cliente → Frontend → API REST → Autenticação (JWT) → PostgreSQL
-                                      ↓
-                               Gera token JWT
-```
-
-### 2️⃣ Entrada na Fila
-```
-Cliente → Frontend → API REST → Serviço de Filas → PostgreSQL
-                          ↓
-                    WebSocket ← API → Frontend (atualização em tempo real)
-```
-
-### 3️⃣ Chamada de Próximo Atendimento
-```
-Atendente → Frontend → API REST → Motor de Priorização
-                                       ↓
-                                  Calcula score
-                                       ↓
-                          Serviço de Atendimento → PostgreSQL
-                                       ↓
-                    WebSocket → Frontend (notifica cliente)
-```
-
-### 4️⃣ Geração de Métricas
-```
-Serviço de Atendimento → PostgreSQL
-             ↓
-      Serviço de Métricas
-             ↓
-   Painel Administrativo (via API REST)
-```
-
----
-
-## Stack Tecnológico
-
-### Frontend
-- **Framework**: React 18+
-- **Linguagem**: TypeScript
-- **State Management**: Redux ou Zustand
-- **HTTP Client**: Axios
-- **UI Components**: Material-UI ou Tailwind CSS
-- **Real-time**: Socket.io
-
-### Backend
-- **Linguagem**: Go 1.21+
-- **Framework Web**: Gin Gonic
-- **Autenticação**: JWT (golang-jwt)
-- **Hash de Senha**: bcrypt
-- **Validação**: Go-playground/validator
-- **Logging**: Zap ou Logrus
-- **Testes**: Go testing + Testify
-
-### Banco de Dados
-- **SQL**: PostgreSQL 14+
-- **Migrations**: Golang-migrate ou GORM
-- **Cache**: Redis 7+
-
-### DevOps
-- **Containerização**: Docker
-- **Orquestração Local**: Docker Compose
-- **CI/CD**: GitHub Actions (futuro)
-
----
-
-## Deployment
-
-### Desenvolvimento
-```yaml
-docker-compose up
-```
-
-### Produção (futuro)
-- Kubernetes
-- AWS ECS ou DigitalOcean App Platform
-- GitHub Container Registry
 
 ---
 

@@ -125,7 +125,7 @@ flowchart TB
 
 ---
 
-## 👨‍💻 Autor do projeto
+## Autor do projeto
 *projeto orientado ao primeiro semestre da matéria de engenharia de software I*
 
 **Yuri Duarte Kerber Alves da Silva**
